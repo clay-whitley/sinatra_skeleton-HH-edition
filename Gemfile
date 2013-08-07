@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'haml'
+gem 'sass'
+
+gem 'therubyracer'
+gem 'coffee-script'
+
 gem 'pry'
 
 # PostgreSQL driver
