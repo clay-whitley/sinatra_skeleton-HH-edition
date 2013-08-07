@@ -20,6 +20,8 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'coffee-script'
+
 group :test do
   gem 'faker'
   gem 'rspec'
