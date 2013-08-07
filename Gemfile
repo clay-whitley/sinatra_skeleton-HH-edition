@@ -1,6 +1,7 @@
 source :rubygems
 
 gem 'haml'
+gem 'pry'
 
 # PostgreSQL driver
 gem 'pg'

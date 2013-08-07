@@ -22,7 +22,7 @@ namespace :generate do
       raise "ERROR: Model file '#{model_path}' already exists"
     end
 
-    puts "Creating #{model_path}"
+    #puts "Creating #{model_path}"
     File.open(model_path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
         class #{model_name} < ActiveRecord::Base
@@ -118,9 +118,9 @@ namespace :db do
   end
 end
 
-desc 'Start IRB with application environment loaded'
+desc 'Start pry with application environment loaded'
 task "console" do
-  exec "irb -r./config/environment"
+  exec "pry -r./config/environment"
 end
 
 desc "Run the specs"
