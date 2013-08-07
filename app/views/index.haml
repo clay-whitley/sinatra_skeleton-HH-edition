@@ -1,0 +1,19 @@
+.container.well
+  %h1 Welcome to Sinatra!
+
+  %table
+    %tr
+      %th File Description
+      %th File Location
+    %tr
+      %td This view file
+      %td
+        %code= __FILE__.gsub(Sinatra::Application.root, '')
+    %tr
+      %td The layout file
+      %td
+        %code= File.expand_path('../layout.haml', __FILE__).gsub(Sinatra::Application.root, '')
+
+      %td The current controller
+      %td
+        %code= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '')
