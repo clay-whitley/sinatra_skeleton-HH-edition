@@ -34,3 +34,12 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+# Set up coffeescript compiler
+
+get '/custom_js/:jsfile' do
+  file = "#{File.dirname(File.dirname(__FILE__))}/app/assets/#{params[:jsfile].gsub('.js', '.coffee')}"
+  js = CoffeeScript.compile(File.read(file))
+  content_type "text/javascript"
+  return js
+end
